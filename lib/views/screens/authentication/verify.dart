@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_engr/controllers/controller.dart';
+import 'package:flutter_engr/core/color.dart';
 import 'package:flutter_engr/core/const.dart';
 import 'package:flutter_engr/core/validator.dart';
 import 'package:flutter_engr/views/screens/authentication/on_screen_keypad.dart';
 import 'package:flutter_engr/views/widgets/button.dart';
-import 'package:flutter_engr/core/color.dart';
-import 'package:flutter_engr/controllers/controller.dart';
 import 'package:flutter_engr/views/widgets/text_input_field.dart';
 import 'package:get/get.dart';
 
@@ -48,10 +48,9 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Phone Verification',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
+                  const Text('Phone Verification',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
                   smallerVerticalSpace(),
                   _authController.sendOtp.isTrue
                       ? RichText(
@@ -126,7 +125,6 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                 validator: (value) =>
                     PhoneNumberValidator.validatePhoneNumber(value),
                 onChanged: (v) {
-                  // if (active) _formKey.currentState!.validate();
                 },
               ),
               verticalSpace(0.5),
@@ -392,4 +390,3 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
     }
   }
 }
-
